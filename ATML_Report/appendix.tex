@@ -1,0 +1,56 @@
+\appendix
+\section{All runs}
+Table~\ref{tab:allruns} lists every training run of this study. Runs are identified by model, training mesh (points per axis), number of L-BFGS steps and seed. The per-run outputs (prediction on the test mesh, loss per closure evaluation, figure and configuration) are included in the submitted code archive under \texttt{results/}.
+
+\begin{table}[ht]
+\caption{All 34 training runs. Time is wall-clock training time in minutes; memory is peak GPU memory in MiB. Runs 28--34 (1000-step run, $k=1$ seeds 1--2, Sin/ReLU) ran on an L4, all others on a T4.}
+\label{tab:allruns}
+\begin{center}
+\scriptsize
+\begin{tabular}{l r r r r r r r}
+\toprule
+Model & Mesh & Steps & Seed & Loss & rMAE & rRMSE & Time / Mem \\
+\midrule
+\multicolumn{8}{l}{\textit{Convection}} \\
+FLS & 101 & 500 & 0 & 1.10e-02 & 0.662 & 0.743 & 8.3 / 847 \\
+PINN & 51 & 500 & 0 & 1.36e-02 & 0.736 & 0.805 & 3.8 / 544 \\
+PINN & 101 & 500 & 0 & 1.66e-02 & 0.778 & 0.841 & 8.8 / 822 \\
+PINN & 101 & 500 & 1 & 2.46e-02 & 0.857 & 0.904 & 5.0 / 826 \\
+PINN & 101 & 500 & 2 & 1.58e-02 & 0.766 & 0.830 & 9.0 / 822 \\
+PINN+Wavelet & 101 & 500 & 0 & 4.70e-01 & 1.262 & 1.392 & 3.8 / 1313 \\
+PINNsFormer, $k=1$ & 51 & 500 & 0 & 7.32e-05 & 0.021 & 0.025 & 11.2 / 772 \\
+PINNsFormer, $k=1$ & 51 & 500 & 1 & 3.13e-01 & 1.066 & 1.128 & 4.4 / 772 \\
+PINNsFormer, $k=1$ & 51 & 500 & 2 & 6.05e-05 & 0.023 & 0.026 & 9.6 / 772 \\
+PINNsFormer, $k=5$, ReLU & 51 & 500 & 0 & 5.61e-01 & 1.001 & 1.002 & 3.9 / 586 \\
+PINNsFormer, $k=5$, Sin & 51 & 500 & 0 & 1.24e-02 & 0.701 & 0.775 & 5.9 / 1357 \\
+PINNsFormer, $k=5$ & 51 & 500 & 0 & 3.15e-01 & 1.073 & 1.140 & 10.3 / 2262 \\
+PINNsFormer, $k=5$ & 51 & 500 & 1 & 3.13e-01 & 1.066 & 1.129 & 14.4 / 2262 \\
+PINNsFormer, $k=5$ & 51 & 500 & 2 & 8.07e-03 & 0.540 & 0.619 & 22.1 / 2262 \\
+PINNsFormer, $k=5$ & 51 & 1000 & 0 & 8.39e-03 & 0.548 & 0.626 & 25.3 / 2264 \\
+PINNsFormer, $k=5$ & 101 & 500 & 0 & 8.01e-03 & 0.528 & 0.589 & 95.3 / 7646 \\
+QRes & 101 & 500 & 0 & 4.89e-02 & 0.947 & 0.993 & 5.1 / 836 \\
+QRes (512$\times$2) & 101 & 500 & 0 & 1.60e-01 & 1.029 & 1.086 & 3.2 / 988 \\
+\midrule
+\multicolumn{8}{l}{\textit{1D-reaction}} \\
+FLS & 101 & 500 & 0 & 1.99e-01 & 0.985 & 0.984 & 2.4 / 727 \\
+PINN & 51 & 500 & 0 & 1.98e-01 & 0.980 & 0.981 & 0.7 / 519 \\
+PINN & 101 & 500 & 0 & 1.99e-01 & 0.979 & 0.978 & 2.2 / 726 \\
+PINN & 101 & 500 & 1 & 1.99e-01 & 0.979 & 0.977 & 1.7 / 726 \\
+PINN & 101 & 500 & 2 & 9.97e-05 & 0.064 & 0.104 & 3.5 / 726 \\
+PINN+Wavelet & 101 & 500 & 0 & 2.04e-01 & 0.984 & 0.989 & 2.7 / 1070 \\
+PINNsFormer, $k=1$ & 51 & 500 & 0 & 1.98e-01 & 0.977 & 0.977 & 2.3 / 648 \\
+PINNsFormer, $k=5$, ReLU & 51 & 500 & 0 & 2.07e-01 & 0.992 & 0.995 & 3.1 / 537 \\
+PINNsFormer, $k=5$, Sin & 51 & 500 & 0 & 5.49e-06 & 0.013 & 0.025 & 3.2 / 1039 \\
+PINNsFormer, $k=5$ & 51 & 500 & 0 & 4.44e-06 & 0.013 & 0.024 & 5.2 / 1627 \\
+PINNsFormer, $k=5$ & 51 & 500 & 1 & 4.25e-06 & 0.018 & 0.036 & 3.1 / 1627 \\
+PINNsFormer, $k=5$ & 51 & 500 & 2 & 5.08e-06 & 0.018 & 0.036 & 3.3 / 1627 \\
+PINNsFormer, $k=5$ & 101 & 500 & 0 & 1.99e-01 & 0.975 & 0.973 & 14.8 / 5178 \\
+QRes & 101 & 500 & 0 & 1.99e-01 & 0.986 & 0.986 & 2.0 / 686 \\
+\midrule
+\multicolumn{8}{l}{\textit{1D-wave}} \\
+PINN & 101 & 1000 & 0 & 3.36e-03 & 0.099 & 0.114 & 33.2 / 1468 \\
+PINNsFormer, $k=5$ & 51 & 1000 & 0 & 2.36e-02 & 0.374 & 0.378 & 82.5 / 5063 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
