@@ -1,0 +1,19 @@
+{
+  "pde": "convection",
+  "model": "qres",
+  "seed": 0,
+  "iters": 500,
+  "train_grid": 101,
+  "test_grid": 101,
+  "k": 5,
+  "dt": 0.0001,
+  "qres_hidden": 512,
+  "qres_layers": 2,
+  "d_model": 32,
+  "heads": 2,
+  "n_layers": 1,
+  "device": null,
+  "out": "/content/pinnsformer/results",
+  "tag": "nbconfig",
+  "save_model": false
+}
